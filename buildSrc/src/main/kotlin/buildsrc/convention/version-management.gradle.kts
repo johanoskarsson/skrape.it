@@ -5,18 +5,18 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 plugins {
     base
     id("com.github.ben-manes.versions")
-    id("se.patrikerdes.use-latest-versions")
+//    id("se.patrikerdes.use-latest-versions")
 }
 
 val updateDependencies by tasks.registering {
     group = LifecycleBasePlugin.BUILD_GROUP
-    dependsOn(tasks.useLatestVersions)
+//    dependsOn(tasks.useLatestVersions)
     dependsOn(tasks.withType<Test>())
 }
 
-tasks.check {
-    mustRunAfter(updateDependencies)
-}
+//tasks.check {
+//    mustRunAfter(updateDependencies)
+//}
 
 tasks.withType<DependencyUpdatesTask>().configureEach {
 
